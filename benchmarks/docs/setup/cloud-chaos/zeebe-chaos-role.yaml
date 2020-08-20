@@ -1,0 +1,20 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: zeebe-chaos-role
+  labels:
+    app.kubernetes.io/component: remote
+    app.kubernetes.io/name: zeebe-chaos
+rules:
+- apiGroups:
+  - cloud.camunda.io
+  resources:
+  - zeebeclusters
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
